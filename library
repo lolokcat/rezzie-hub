@@ -305,7 +305,7 @@ function Lib.new()
  
       local ElementLibrary = {}
       
-      function ElementLibrary.new(type, callback)
+      function ElementLibrary.new(type, name, callback)
           callback = callback or function() end
           if type == "Button" then 
               local Button = Instance.new("TextButton")
@@ -316,6 +316,7 @@ function Lib.new()
               Button.Size = UDim2.new(0, 449, 0, 33)
               Button.AutoButtonColor = false
               Button.Font = Enum.Font.Gotham
+              Button.Text = name
               Button.TextColor3 = Color3.fromRGB(159, 90, 255)
               Button.TextSize = 14.000
 
@@ -338,7 +339,7 @@ function Lib.new()
               Toggle.Size = UDim2.new(0, 449, 0, 33)
               Toggle.AutoButtonColor = false
               Toggle.Font = Enum.Font.GothamBlack
-              Toggle.Text = "Toggle"
+              Toggle.Text = ""
               Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
               Toggle.TextSize = 14.000
               Toggle.TextTransparency = 1.000
@@ -352,7 +353,7 @@ function Lib.new()
               TextLabel.Position = UDim2.new(0.0400890857, 0, 0, 0)
               TextLabel.Size = UDim2.new(0, 431, 0, 33)
               TextLabel.Font = Enum.Font.Gotham
-              TextLabel.Text = "Toggle"
+              TextLabel.Text = name
               TextLabel.TextColor3 = Color3.fromRGB(159, 90, 255)
               TextLabel.TextSize = 14.000
               TextLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -404,7 +405,7 @@ function Lib.new()
               Textbox.Size = UDim2.new(0, 449, 0, 33)
               Textbox.AutoButtonColor = false
               Textbox.Font = Enum.Font.GothamBlack
-              Textbox.Text = "Toggle"
+              Textbox.Text = name
               Textbox.TextColor3 = Color3.fromRGB(255, 255, 255)
               Textbox.TextSize = 14.000
               Textbox.TextTransparency = 1.000
