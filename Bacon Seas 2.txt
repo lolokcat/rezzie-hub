@@ -1,0 +1,38 @@
+if game.PlaceId == 6952121065 then
+local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/lolokcat/rezzie-hub/main/library", true))() -- load the lib
+
+local L = Lib.new() -- create gui (constructor)
+
+local Main = L.new("Main") -- new tab (constructor)
+
+Main.new("Toggle", "Auto Farm", function(v) -- toggle (constructor)
+getgenv().autoFarm = v
+
+while autoFarm do wait()
+for i, v in pairs(game:GetService("Workspace")["Bacon Seas:Season2"].Fram["Snow man pack"]:GetChildren()) do
+    pcall(function()
+        while v.Humanoid.Health > 0 do
+            repeat
+            wait(0.1)
+                lp.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame + Vector3.new(0,0,-3)
+                game:GetService("VirtualUser"):ClickButton1(Vector2.new())
+            until
+                v.Humanoid.Health > 0
+        end
+    end)
+end
+end
+end)
+
+Main.new("Toggle", "Give Fruits", function(v) -- toggle (constructor)
+getgenv().Fruit = v
+
+while Fruit do wait()
+game:GetService("Players").LocalPlayer.PlayerGui.SpinUI.Chat.Yes.Spin.Reward:FireServer("Rare")    
+end
+end)
+
+Main.new("Button", "Give Fruit", function()
+game:GetService("Players").LocalPlayer.PlayerGui.SpinUI.Chat.Yes.Spin.Reward:FireServer("Rare")
+end)
+end

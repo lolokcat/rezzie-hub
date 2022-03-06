@@ -1,0 +1,23 @@
+if game.PlaceId == 60654525 then
+local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/lolokcat/rezzie-hub/main/library", true))() -- load the lib
+
+local L = Lib.new() -- create gui (constructor)
+
+local Main = L.new("Main") -- new tab (constructor)
+
+Main.new("Button", "Upgrade Health", function() -- button (constructor)
+game:GetService("Players").LocalPlayer.RemoteFunctions.UpgradeFunction:FireServer("Health", "One") 
+end)
+
+Main.new("Button", "Upgrade Damage", function() -- button (constructor)
+game:GetService("Players").LocalPlayer.RemoteFunctions.UpgradeFunction:FireServer("Damage", "One")  
+end)
+
+Main.new("Button", "Upgrade Defense", function() -- button (constructor)
+game:GetService("Players").LocalPlayer.RemoteFunctions.UpgradeFunction:FireServer("Defense", "One")  
+end)
+
+Main.new("Button", "Buy Frostbrand Sword", function() -- button (constructor)
+game:GetService("Players").LocalPlayer.RemoteFunctions.SwordShopSystem:FireServer("Buy", 0, "Frostbrand")
+end)
+end

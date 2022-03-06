@@ -1,0 +1,37 @@
+if game.PlaceId == 5890116343 then
+local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/lolokcat/rezzie-hub/main/library", true))() -- load the lib
+
+local L = Lib.new() -- create gui (constructor)
+
+local Main = L.new("Main") -- new tab (constructor)
+
+Main.new("Button", "Hide Name", function() -- button (constructor)
+game:GetService("Players").LocalPlayer.Character.Head.InfoGui:Destroy()
+end)
+
+Main.new("Toggle", "Auto Age", function(v) -- toggle (constructor)
+getgenv().age = v 
+
+while age do wait()
+game:GetService("ReplicatedStorage").Remotes.AgeUp:FireServer()
+end
+end)
+
+Main.new("Toggle", "Auto Level", function(v) -- toggle (constructor)
+getgenv().level = v 
+
+while level do wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(52.240650177002, 3.9119691848755, -153.31050109863)
+wait()
+game:GetService("ReplicatedStorage").Remotes.PunchEvent:FireServer()
+end
+end)
+
+Main.new("Toggle", "Godmode", function(v) -- toggle (constructor)
+getgenv().god = v 
+
+while god do wait()
+game:GetService("ReplicatedStorage").Remotes.toggleSafe:FireServer(true)
+end
+end)
+end

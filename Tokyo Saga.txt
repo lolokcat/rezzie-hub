@@ -1,0 +1,72 @@
+if game.PlaceId == 7285447838 then
+local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/lolokcat/rezzie-hub/main/library", true))() -- load the lib
+
+local L = Lib.new() -- create gui (constructor)
+
+local Main = L.new("Main") -- new tab (constructor)
+
+Main.new("Button", "Remove Anticheat", function() -- button (constructor)
+local OldNameCall = nil
+OldNameCall = hookmetamethod(game, "__namecall", function(...)
+    local Args = {...}
+    local Self = Args[1]
+    if getnamecallmethod()== "Kick" and game.Players.LocalPlayer then
+    return print("game tried to kick L0l")
+    end
+    return OldNameCall(...)
+end)
+
+wait(1)
+
+game.Players.LocalPlayer.Character.Support:Destroy()
+game.Players.LocalPlayer.Character.AntiHackerScript:Destroy()
+end)
+
+Main.new("Toggle", "Farm Strength", function(v) -- toggle (constructor)
+getgenv().strengthFarm = v
+while getgenv().strengthFarm do wait()
+    game:GetService("ReplicatedStorage").Pushup:FireServer()
+end    
+end)
+
+Main.new("Toggle", "Farm Stamina", function(v) -- toggle (constructor)
+getgenv().staminaFarm = v
+while getgenv().staminaFarm do wait()
+    game:GetService("ReplicatedStorage").Stamina:FireServer()
+end      
+end)
+
+Main.new("Toggle", "Farm Defense", function(v) -- toggle (constructor)
+getgenv().defenseFarm = v
+while getgenv().defenseFarm do wait()
+    game:GetService("ReplicatedStorage").Defense:FireServer()
+end   
+end)
+
+Main.new("Toggle", "Money Farm", function(v) -- toggle (constructor)
+getgenv().moneyFarm = v
+while getgenv().moneyFarm do wait()
+fireclickdetector(game:GetService("Workspace")["Quest Motor"].ClickDetector)
+wait()
+game:GetService("ReplicatedStorage").Quest.Postercuatro:FireServer()
+wait()
+fireclickdetector(game:GetService("Workspace")["Motor Buyer"].ClickDetector)
+end   
+end)
+
+Main.new("Button", "Anti Jump Cooldown", function() -- button (constructor)
+game:GetService("Players").LocalPlayer.PlayerGui.JumpCooldown:Destroy() 
+end)
+
+Main.new("Button", "Reset", function() -- button (constructor)
+for i, v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+    if v:IsA("BasePart") then
+        v:Destroy()
+    end
+end
+end)
+
+Main.new("Button", "Show Stats", function() -- button (constructor)
+game:GetService("Players").LocalPlayer.PlayerGui["Old Show Stats"].Enabled = true
+end)
+end

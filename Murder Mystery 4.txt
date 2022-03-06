@@ -1,0 +1,33 @@
+if game.PlaceId == 6755834029 then
+local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/lolokcat/rezzie-hub/main/library", true))() -- load the lib
+
+local L = Lib.new() -- create gui (constructor)
+
+local Main = L.new("Main") -- new tab (constructor)
+
+local StarterGui = game:GetService("StarterGui")
+
+Main.new("Button", "Murderer", function() -- button (constructor)
+for i,v in pairs(game.Players:GetChildren()) do 
+if v.Backpack:FindFirstChild("Knife") then
+        StarterGui:SetCore("SendNotification", {
+            Title = "Murderer",
+            Text = v.Name.." Is a Murderer!",
+            Duration = 5,
+        })
+    end
+end
+end)
+
+Main.new("Button", "Sheriff", function() -- button (constructor)
+for i,v in pairs(game.Players:GetChildren()) do 
+if v.Backpack:FindFirstChild("Revolver") then
+        StarterGui:SetCore("SendNotification", {
+            Title = "Sheriff",
+            Text = v.Name.." Is a Sheriff!",
+            Duration = 5,
+        })
+    end
+end
+end)
+end
