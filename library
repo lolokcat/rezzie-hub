@@ -1,5 +1,5 @@
 local Lib = {}
-function Lib.new()
+function Lib.new(Name)
     local Library = Instance.new("ScreenGui")
     local Main = Instance.new("Frame")
     local UICorner = Instance.new("UICorner")
@@ -219,7 +219,7 @@ function Lib.new()
     Main_2.Position = UDim2.new(0.0270700641, 0, 0, 0)
     Main_2.Size = UDim2.new(0, 611, 0, 33)
     Main_2.Font = Enum.Font.GothamBlack
-    Main_2.Text = "Rezzie Hub"
+    Main_2.Text = Name
     Main_2.TextColor3 = Color3.fromRGB(159, 90, 255)
     Main_2.TextSize = 14.000
     Main_2.TextTransparency = 0.300
